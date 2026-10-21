@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aizsardzības izdevumi Eiropā 2000–2025</title>
+<style>
+:root { --ink:#16202B; --muted:#5B6672; --line:#DDE2E8; --bg:#F6F7F9; --card:#fff; --accent:#9E3039; color-scheme: light dark; }
+@media (prefers-color-scheme: dark) { :root { --ink:#E6EAF0; --muted:#A5AFBC; --line:#2B3440; --bg:#11161C; --card:#18202A; --accent:#E07A86; } }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--ink); line-height:1.55; }
+main { max-width: 980px; margin: 0 auto; padding: 32px 18px 60px; }
+h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height:1.15; margin: 0 0 8px; letter-spacing:-0.01em; }
+h2 { margin: 36px 0 10px; font-size: 1.3rem; }
+.lede { color: var(--muted); max-width: 70ch; margin: 0 0 20px; }
+.facts { background: var(--card); border:1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 10px; padding: 14px 20px; }
+.facts li { margin: 6px 0; }
+.dl { display:flex; gap:10px; flex-wrap:wrap; }
+.dl a { background: var(--card); border:1px solid var(--line); border-radius: 8px; padding: 10px 14px; text-decoration:none; color: var(--ink); font-weight:600; }
+.dl a:hover { border-color: var(--accent); }
+.dl span { display:block; font-weight:400; font-size:.85rem; color: var(--muted); }
+figure { margin: 0 0 22px; background: #fff; border:1px solid var(--line); border-radius: 10px; padding: 10px; }
+figure img { width:100%; height:auto; display:block; }
+figcaption { font-size:.9rem; color:#4B5563; padding: 8px 4px 0; }
+a { color: var(--accent); }
+.note { font-size:.92rem; color: var(--muted); max-width: 75ch; }
+footer { margin-top: 40px; font-size: .85rem; color: var(--muted); border-top:1px solid var(--line); padding-top: 14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Aizsardzības izdevumi Eiropā, 2000–2025</h1>
+<p class="lede">Dati, aprēķini un grafiki kursa darbam par aizsardzības izdevumu tendencēm Eiropā, īpaši Baltijas valstīs. Dati tiek lejupielādēti un pārrēķināti automātiski. Pēdējā atjaunināšana: 2026-10-21.</p>
+
+<h2>Galvenie skaitļi</h2>
+<ul class="facts"><li>2025. gadā Latvija aizsardzībai tērēja <b>3,61 %</b> no IKP (2014. gadā — 0,98 %, 2000. gadā — 0,90 %).</li><li>Lietuva: <b>3,08 %</b>, Igaunija: <b>3,37 %</b>. Starp 38 Eiropas valstīm (bez Ukrainas, Krievijas, Baltkrievijas) Latvija ir 2. vietā, Lietuva 6., Igaunija 3.</li><li>ES-27 kopumā (svērtais vidējais): <b>2,17 %</b> no IKP 2025. gadā pret 1,31 % 2014. gadā.</li><li>NATO Eiropas dalībvalstis, kas sasniedz 2 % mērķi: <b>21 no 30</b> 2025. gadā (2014. gadā — 2).</li><li>Augstākie izdevumi: Polija 4,50 %, Latvija 3,61 %, Igaunija 3,37 %.</li></ul>
+
+<h2>Dati</h2>
+<div class="dl">
+  <a href="dati/aizsardzibas_izdevumi.xlsx">Excel darbgrāmata<span>tabulas pa gadiem, periodu un reģionu vidējie</span></a>
+  <a href="dati/dati_visi.csv">Visi dati (CSV)<span>viena rinda katrai valstij un gadam</span></a>
+</div>
+
+<h2>Grafiki</h2>
+<figure><a href="grafiki/01_baltija_pret_es.png"><img src="grafiki/01_baltija_pret_es.png" alt="Baltijas valstu aizsardzības izdevumi salīdzinājumā ar ES-27" loading="lazy"></a><figcaption><b>1.</b> Baltijas valstu aizsardzības izdevumi salīdzinājumā ar ES-27 · <a href="grafiki/01_baltija_pret_es.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/02_valstu_salidzinajums_2025.png"><img src="grafiki/02_valstu_salidzinajums_2025.png" alt="Valstu salīdzinājums jaunākajā gadā" loading="lazy"></a><figcaption><b>2.</b> Valstu salīdzinājums jaunākajā gadā · <a href="grafiki/02_valstu_salidzinajums_2025.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/03_izmaina_kops_2014.png"><img src="grafiki/03_izmaina_kops_2014.png" alt="Izmaiņa kopš 2014. gada" loading="lazy"></a><figcaption><b>3.</b> Izmaiņa kopš 2014. gada · <a href="grafiki/03_izmaina_kops_2014.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/04_regionu_videjie.png"><img src="grafiki/04_regionu_videjie.png" alt="Eiropas reģionu vidējie" loading="lazy"></a><figcaption><b>4.</b> Eiropas reģionu vidējie · <a href="grafiki/04_regionu_videjie.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/05_realie_izdevumi_indekss.png"><img src="grafiki/05_realie_izdevumi_indekss.png" alt="Reālo izdevumu pieaugums kopš 2014. gada" loading="lazy"></a><figcaption><b>5.</b> Reālo izdevumu pieaugums kopš 2014. gada · <a href="grafiki/05_realie_izdevumi_indekss.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/06_izdevumi_un_izaugsme.png"><img src="grafiki/06_izdevumi_un_izaugsme.png" alt="Aizsardzības izdevumi un IKP izaugsme" loading="lazy"></a><figcaption><b>6.</b> Aizsardzības izdevumi un IKP izaugsme · <a href="grafiki/06_izdevumi_un_izaugsme.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/07_uz_iedzivotaju_2025.png"><img src="grafiki/07_uz_iedzivotaju_2025.png" alt="Izdevumi uz vienu iedzīvotāju" loading="lazy"></a><figcaption><b>7.</b> Izdevumi uz vienu iedzīvotāju · <a href="grafiki/07_uz_iedzivotaju_2025.png" download>lejupielādēt PNG</a></figcaption></figure>
+<figure><a href="grafiki/08_latvija_divi_avoti.png"><img src="grafiki/08_latvija_divi_avoti.png" alt="Latvija pēc diviem datu avotiem" loading="lazy"></a><figcaption><b>8.</b> Latvija pēc diviem datu avotiem · <a href="grafiki/08_latvija_divi_avoti.png" download>lejupielādēt PNG</a></figcaption></figure>
+
+<h2>Metodoloģija</h2>
+<p class="note">Galvenais avots ir Pasaules Bankas datubāze, kuras militāro izdevumu dati nāk no Stokholmas Starptautiskā miera pētniecības institūta (SIPRI). SIPRI definīcija ietver bruņoto spēku, aizsardzības ministrijas, miera uzturēšanas spēku un paramilitāro vienību izdevumus, kā arī militārās pensijas. Salīdzinājumam izmantoti Eurostat valdības izdevumi pēc funkcijām (COFOG GF02 „Aizsardzība”), kuru definīcija ir šaurāka, tāpēc skaitļi var atšķirties. Reālie izdevumi aprēķināti kā izdevumu daļa no IKP, reizināta ar IKP 2015. gada cenās. ES-27 svērtais vidējais ir visu dalībvalstu kopējie izdevumi, dalīti ar kopējo IKP. Ukraina, Krievija un Baltkrievija ir datos, bet nav iekļautas reitingos un vidējos rādītājos, jo kara ietekme izkropļotu salīdzinājumu.</p>
+<p class="note">Korelācija starp izdevumiem un izaugsmi ir aprakstoša: tā neparāda, vai aizsardzības izdevumi ietekmē izaugsmi.</p>
+
+<footer>Avoti: <a href="https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS">Pasaules Banka / SIPRI</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table">Eurostat gov_10a_exp</a>. Kods: <a href="https://github.com/Argent0rum/aizsardzibas-izdevumi">github.com/Argent0rum/aizsardzibas-izdevumi</a>.</footer>
+</main>
+</body>
+</html>
