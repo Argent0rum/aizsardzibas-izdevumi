@@ -1,0 +1,42 @@
+iso3,iso2,eurostat,valsts,country,grupa,es,nato_gads
+EST,EE,EE,Igaunija,Estonia,Baltijas valstis,1,2004
+LVA,LV,LV,Latvija,Latvia,Baltijas valstis,1,2004
+LTU,LT,LT,Lietuva,Lithuania,Baltijas valstis,1,2004
+DNK,DK,DK,Dānija,Denmark,Ziemeļvalstis,1,1949
+FIN,FI,FI,Somija,Finland,Ziemeļvalstis,1,2023
+ISL,IS,IS,Islande,Iceland,Ziemeļvalstis,0,1949
+NOR,NO,NO,Norvēģija,Norway,Ziemeļvalstis,0,1949
+SWE,SE,SE,Zviedrija,Sweden,Ziemeļvalstis,1,2024
+POL,PL,PL,Polija,Poland,Centrāleiropa,1,1999
+CZE,CZ,CZ,Čehija,Czechia,Centrāleiropa,1,1999
+SVK,SK,SK,Slovākija,Slovakia,Centrāleiropa,1,2004
+HUN,HU,HU,Ungārija,Hungary,Centrāleiropa,1,1999
+AUT,AT,AT,Austrija,Austria,Rietumeiropa,1,
+BEL,BE,BE,Beļģija,Belgium,Rietumeiropa,1,1949
+FRA,FR,FR,Francija,France,Rietumeiropa,1,1949
+DEU,DE,DE,Vācija,Germany,Rietumeiropa,1,1955
+IRL,IE,IE,Īrija,Ireland,Rietumeiropa,1,
+LUX,LU,LU,Luksemburga,Luxembourg,Rietumeiropa,1,1949
+NLD,NL,NL,Nīderlande,Netherlands,Rietumeiropa,1,1949
+CHE,CH,CH,Šveice,Switzerland,Rietumeiropa,0,
+GBR,GB,UK,Apvienotā Karaliste,United Kingdom,Rietumeiropa,0,1949
+CYP,CY,CY,Kipra,Cyprus,Dienvideiropa,1,
+GRC,GR,EL,Grieķija,Greece,Dienvideiropa,1,1952
+ITA,IT,IT,Itālija,Italy,Dienvideiropa,1,1949
+MLT,MT,MT,Malta,Malta,Dienvideiropa,1,
+PRT,PT,PT,Portugāle,Portugal,Dienvideiropa,1,1949
+ESP,ES,ES,Spānija,Spain,Dienvideiropa,1,1982
+ALB,AL,AL,Albānija,Albania,Dienvidaustrumeiropa,0,2009
+BIH,BA,BA,Bosnija un Hercegovina,Bosnia and Herzegovina,Dienvidaustrumeiropa,0,
+BGR,BG,BG,Bulgārija,Bulgaria,Dienvidaustrumeiropa,1,2004
+HRV,HR,HR,Horvātija,Croatia,Dienvidaustrumeiropa,1,2009
+MNE,ME,ME,Melnkalne,Montenegro,Dienvidaustrumeiropa,0,2017
+MKD,MK,MK,Ziemeļmaķedonija,North Macedonia,Dienvidaustrumeiropa,0,2020
+ROU,RO,RO,Rumānija,Romania,Dienvidaustrumeiropa,1,2004
+SRB,RS,RS,Serbija,Serbia,Dienvidaustrumeiropa,0,
+SVN,SI,SI,Slovēnija,Slovenia,Dienvidaustrumeiropa,1,2004
+TUR,TR,TR,Turcija,Türkiye,Dienvidaustrumeiropa,0,1952
+BLR,BY,BY,Baltkrievija,Belarus,Austrumeiropa,0,
+MDA,MD,MD,Moldova,Moldova,Austrumeiropa,0,
+RUS,RU,RU,Krievija,Russia,Austrumeiropa,0,
+UKR,UA,UA,Ukraina,Ukraine,Austrumeiropa,0,
