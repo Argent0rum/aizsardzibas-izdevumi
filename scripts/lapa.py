@@ -32,7 +32,7 @@ def main():
     facts = [
         f"{last}. gadā Latvija aizsardzībai tērēja <b>{lv(lvd['last'], 2)} %</b> no IKP (2014. gadā — {lv(lvd['y2014'], 2)} %, 2000. gadā — {lv(lvd['y2000'], 2)} %).",
         f"Lietuva: <b>{lv(b['LTU']['last'], 2)} %</b>, Igaunija: <b>{lv(b['EST']['last'], 2)} %</b>. "
-        f"Starp {f['n_ranked']} Eiropas valstīm (bez Ukrainas, Krievijas, Baltkrievijas) Latvija ir {lvd['rank']}. vietā, Lietuva {b['LTU']['rank']}., Igaunija {b['EST']['rank']}.",
+        f"Starp {f['n_ranked']} Eiropas valstīm (bez Ukrainas, Krievijas, Baltkrievijas un Islandes) Latvija ir {lvd['rank']}. vietā, Lietuva {b['LTU']['rank']}., Igaunija {b['EST']['rank']}.",
         f"ES-27 kopumā (svērtais vidējais): <b>{lv(f['eu_last'], 2)} %</b> no IKP {last}. gadā pret {lv(f['eu_2014'], 2)} % 2014. gadā.",
         f"NATO Eiropas dalībvalstis, kas sasniedz 2 % mērķi: <b>{f['nato_eur_over2_last']} no {f['nato_eur_n_last']}</b> {last}. gadā (2014. gadā — {f['nato_eur_over2_2014']}).",
         "Augstākie izdevumi: " + ", ".join(f"{html.escape(n)} {lv(v, 2)} %" for n, v in f["top3"]) + ".",
@@ -88,7 +88,7 @@ footer {{ margin-top: 40px; font-size: .85rem; color: var(--muted); border-top:1
 {figs}
 
 <h2>Metodoloģija</h2>
-<p class="note">Galvenais avots ir Pasaules Bankas datubāze, kuras militāro izdevumu dati nāk no Stokholmas Starptautiskā miera pētniecības institūta (SIPRI). SIPRI definīcija ietver bruņoto spēku, aizsardzības ministrijas, miera uzturēšanas spēku un paramilitāro vienību izdevumus, kā arī militārās pensijas. Salīdzinājumam izmantoti Eurostat valdības izdevumi pēc funkcijām (COFOG GF02 „Aizsardzība”), kuru definīcija ir šaurāka, tāpēc skaitļi var atšķirties. Reālie izdevumi aprēķināti kā izdevumu daļa no IKP, reizināta ar IKP 2015. gada cenās. ES-27 svērtais vidējais ir visu dalībvalstu kopējie izdevumi, dalīti ar kopējo IKP. Ukraina, Krievija un Baltkrievija ir datos, bet nav iekļautas reitingos un vidējos rādītājos, jo kara ietekme izkropļotu salīdzinājumu.</p>
+<p class="note">Galvenais avots ir Pasaules Bankas datubāze, kuras militāro izdevumu dati nāk no Stokholmas Starptautiskā miera pētniecības institūta (SIPRI). SIPRI definīcija ietver bruņoto spēku, aizsardzības ministrijas, miera uzturēšanas spēku un paramilitāro vienību izdevumus, kā arī militārās pensijas. Salīdzinājumam izmantoti Eurostat valdības izdevumi pēc funkcijām (COFOG GF02 „Aizsardzība”), kuru definīcija ir šaurāka, tāpēc skaitļi var atšķirties. Reālie izdevumi aprēķināti kā izdevumu daļa no IKP, reizināta ar IKP 2015. gada cenās. ES-27 svērtais vidējais ir visu dalībvalstu kopējie izdevumi, dalīti ar kopējo IKP. Ukraina, Krievija un Baltkrievija ir datos, bet nav iekļautas reitingos un vidējos rādītājos, jo kara ietekme izkropļotu salīdzinājumu. Arī Islande nav reitingos, jo tai nav bruņoto spēku.</p>
 <p class="note">Korelācija starp izdevumiem un izaugsmi ir aprakstoša: tā neparāda, vai aizsardzības izdevumi ietekmē izaugsmi.</p>
 
 <footer>Avoti: <a href="https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS">Pasaules Banka / SIPRI</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table">Eurostat gov_10a_exp</a>. Kods: <a href="https://github.com/Argent0rum/aizsardzibas-izdevumi">github.com/Argent0rum/aizsardzibas-izdevumi</a>.</footer>

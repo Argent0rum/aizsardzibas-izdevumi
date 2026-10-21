@@ -24,7 +24,7 @@
    "rank": 6
   }
  },
- "n_ranked": 38,
+ "n_ranked": 37,
  "top3": [
   [
    "Polija",
@@ -44,5 +44,5 @@
  "nato_eur_over2_last": 21,
  "nato_eur_n_last": 30,
  "nato_eur_over2_2014": 2,
- "corr_r": -0.1449639049431311
+ "corr_r": -0.1503561812158549
 }

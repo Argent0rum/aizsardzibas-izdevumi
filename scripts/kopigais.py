@@ -13,6 +13,8 @@ GROUP_ORDER = ["Baltijas valstis", "Ziemeļvalstis", "Centrāleiropa", "Rietumei
 BALTICS = ["EST", "LVA", "LTU"]
 # Countries at war (or a party to it) are left out of rankings and averages so they don't distort the scale.
 WAR = {"UKR", "RUS", "BLR"}
+# Iceland has no armed forces (its military spending is reported as zero), so it is left out of rankings too.
+EXCLUDE = WAR | {"ISL"}
 SOURCE_WB = "Avots: Pasaules Banka (SIPRI dati), autora aprēķini"
 SOURCE_ES = "Avots: Eurostat (gov_10a_exp, COFOG GF02), autora aprēķini"
 
@@ -46,4 +48,4 @@ def lv(x, d=1):
     if x is None or (isinstance(x, float) and np.isnan(x)):
         return "–"
     s = f"{x:,.{d}f}"
-    return s.replace(",", " ").replace(".", ",")
+    return s.replace(",", " ").replace(".", ",").replace("-", "−")

@@ -9,7 +9,7 @@ from matplotlib.ticker import FuncFormatter, MultipleLocator
 import numpy as np
 import pandas as pd
 
-from kopigais import BALTICS, DOCS, GROUP_ORDER, SOURCE_ES, SOURCE_WB, WAR, eu_weighted, latest_year, load, lv
+from kopigais import BALTICS, DOCS, EXCLUDE, GROUP_ORDER, SOURCE_ES, SOURCE_WB, WAR, eu_weighted, latest_year, load, lv
 
 OUT = DOCS / "grafiki"
 COL = {"LVA": "#9E3039", "LTU": "#D99A00", "EST": "#2a78d6", "EU": "#30343B", "OTHER": "#B9C1CC", "TARGET": "#C0392B"}
@@ -68,7 +68,7 @@ def chart_baltics_vs_eu(df, last):
 
 
 def bar_chart(df, col, last, name, title, subtitle, digits=1, target=False, xlabel="", diverging=False):
-    d = df.drop(index=[i for i in WAR if i in df.index]).dropna(subset=[col]).sort_values(col)
+    d = df.drop(index=[i for i in EXCLUDE if i in df.index]).dropna(subset=[col]).sort_values(col)
     fig, ax = plt.subplots(figsize=(9, max(6, len(d) * 0.24)))
     colors = [COL[i] if i in BALTICS else (COL["EU"] if i == "EU" else COL["OTHER"]) for i in d.index]
     ax.barh(d["valsts"], d[col], color=colors, height=0.72)
@@ -87,12 +87,13 @@ def bar_chart(df, col, last, name, title, subtitle, digits=1, target=False, xlab
     ax.xaxis.set_major_formatter(comma(0 if digits == 0 else 1))
     ax.set_xlabel(xlabel)
     ax.margins(y=0.01)
-    ax.set_xlim(min(0, d[col].min() * 1.15), d[col].max() * 1.12)
+    span = d[col].max() - min(0, d[col].min())
+    ax.set_xlim(min(0, d[col].min()) - (0.1 * span if d[col].min() < 0 else 0), d[col].max() + 0.1 * span)
     finish(fig, ax, name, title, subtitle)
 
 
 def chart_regions(df, last):
-    d = df[~df["iso3"].isin(WAR) & (df["year"] <= last)]
+    d = df[~df["iso3"].isin(EXCLUDE) & (df["year"] <= last)]
     t = d.pivot_table(index="year", columns="grupa", values="mil_gdp", aggfunc="mean")
     fig, ax = plt.subplots(figsize=(9, 5))
     palette = ["#9E3039", "#2a78d6", "#1baf7a", "#6250d6", "#eb6834", "#D99A00"]
@@ -139,7 +140,7 @@ def chart_real_index(df, last):
 
 
 def chart_growth_scatter(df, last):
-    d = df[~df["iso3"].isin(WAR) & df["year"].between(2000, last)]
+    d = df[~df["iso3"].isin(EXCLUDE) & df["year"].between(2000, last)]
     g = d.groupby(["iso3", "valsts"]).agg(mil=("mil_gdp", "mean"), gr=("gdp_growth", "mean")).dropna().reset_index()
     r = g["mil"].corr(g["gr"])
     fig, ax = plt.subplots(figsize=(9, 6))

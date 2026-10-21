@@ -12,7 +12,7 @@ import pandas as pd
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
-from kopigais import (BALTICS, DOCS, GROUP_ORDER, PROCESSED, ROOT, SOURCE_ES, SOURCE_WB, WAR,
+from kopigais import (BALTICS, DOCS, EXCLUDE, GROUP_ORDER, PROCESSED, ROOT, SOURCE_ES, SOURCE_WB, WAR,
                       eu_weighted, latest_year, load, periods)
 
 
@@ -47,7 +47,7 @@ def period_table(df, last):
 
 
 def group_table(df, last):
-    d = df[~df["iso3"].isin(WAR) & (df["year"] <= last)]
+    d = df[~df["iso3"].isin(EXCLUDE) & (df["year"] <= last)]
     t = d.pivot_table(index="year", columns="grupa", values="mil_gdp", aggfunc="mean")
     t = t[[g for g in GROUP_ORDER if g in t.columns]]
     t["ES-27 (svērtais)"] = eu_weighted(df)
@@ -57,7 +57,7 @@ def group_table(df, last):
 
 
 def correlation_table(df, last):
-    d = df[~df["iso3"].isin(WAR) & df["year"].between(2000, last)]
+    d = df[~df["iso3"].isin(EXCLUDE) & df["year"].between(2000, last)]
     g = d.groupby(["valsts", "grupa"]).agg(mil=("mil_gdp", "mean"), growth=("gdp_growth", "mean")).dropna().reset_index()
     r = g["mil"].corr(g["growth"])
     g.columns = ["Valsts", "Reģions", f"Vid. aizsardzības izdevumi, % no IKP (2000–{last})", f"Vid. reālā IKP izaugsme, % gadā (2000–{last})"]
@@ -152,7 +152,7 @@ def main():
     eu = eu_weighted(df)
     nato_eu = df[(df["year"] == last) & (df["nato"] == 1)]
     nato14 = df[(df["year"] == 2014) & (df["iso3"].isin(nato_eu["iso3"]))]
-    rank = piv[last].drop(list(WAR), errors="ignore").dropna().sort_values(ascending=False)
+    rank = piv[last].drop(list(EXCLUDE), errors="ignore").dropna().sort_values(ascending=False)
     facts = {
         "latest": last, "downloaded": dl_date,
         "baltics": {iso: {"name": names[iso], "y2000": piv.get(2000, {}).get(iso), "y2014": piv[2014].get(iso), "last": piv[last].get(iso),
