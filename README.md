@@ -5,7 +5,7 @@ Dati, aprēķini un grafiki kursa darbam par aizsardzības izdevumu tendencēm E
 **Rezultāti:** https://argent0rum.github.io/aizsardzibas-izdevumi/
 — galvenie skaitļi, visi grafiki un Excel darbgrāmata vienuviet.
 
-*English summary: a data pipeline that downloads defence spending data for 41 European countries (World Bank / SIPRI and Eurostat), cleans it, calculates trends and comparisons, and produces charts, an Excel workbook and a results page in Latvian for a term paper at the University of Latvia. It re-runs automatically every month on GitHub Actions.*
+*English summary: a data pipeline that downloads defence spending data for 41 European countries (World Bank / SIPRI and Eurostat), cleans it, calculates trends and comparisons, and produces charts, an Excel workbook and a results page in Latvian. It re-runs automatically every month on GitHub Actions.*
 
 ## Kas te ir
 
