@@ -150,7 +150,7 @@ def main():
     piv = df.pivot_table(index="iso3", columns="year", values="mil_gdp")
     names = df.drop_duplicates("iso3").set_index("iso3")["valsts"]
     eu = eu_weighted(df)
-    nato_eu = df[(df["year"] == last) & (df["nato"] == 1)]
+    nato_eu = df[(df["year"] == last) & (df["nato"] == 1) & (df["iso3"] != "ISL")]  # Islandei nav bruņoto spēku
     nato14 = df[(df["year"] == 2014) & (df["iso3"].isin(nato_eu["iso3"]))]
     rank = piv[last].drop(list(EXCLUDE), errors="ignore").dropna().sort_values(ascending=False)
     facts = {

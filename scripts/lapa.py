@@ -34,9 +34,14 @@ def main():
         f"Lietuva: <b>{lv(b['LTU']['last'], 2)} %</b>, Igaunija: <b>{lv(b['EST']['last'], 2)} %</b>. "
         f"Starp {f['n_ranked']} Eiropas valstīm (bez Ukrainas, Krievijas, Baltkrievijas un Islandes) Latvija ir {lvd['rank']}. vietā, Lietuva {b['LTU']['rank']}., Igaunija {b['EST']['rank']}.",
         f"ES-27 kopumā (svērtais vidējais): <b>{lv(f['eu_last'], 2)} %</b> no IKP {last}. gadā pret {lv(f['eu_2014'], 2)} % 2014. gadā.",
-        f"NATO Eiropas dalībvalstis, kas sasniedz 2 % mērķi: <b>{f['nato_eur_over2_last']} no {f['nato_eur_n_last']}</b> {last}. gadā (2014. gadā — {f['nato_eur_over2_2014']}).",
+        f"NATO Eiropas dalībvalstis (bez Islandes), kas pēc SIPRI datiem aizsardzībai tērē vismaz 2 % no IKP: <b>{f['nato_eur_over2_last']} no {f['nato_eur_n_last']}</b> {last}. gadā (2014. gadā — {f['nato_eur_over2_2014']}). "
+        "Tas nav NATO oficiālais vērtējums: NATO izdevumus rēķina pēc savas definīcijas, un pēc tās aplēsēm 2025. gadā 2 % sasniedza visas dalībvalstis.",
         "Augstākie izdevumi: " + ", ".join(f"{html.escape(n)} {lv(v, 2)} %" for n, v in f["top3"]) + ".",
+        f"{last}. gada skaitļi ir sākotnēji: SIPRI jaunāko gadu parasti precizē nākamajos izdevumos, tāpēc tie var mainīties.",
     ]
+    mapes = sorted((p.name for p in (DOCS / "arhivs").iterdir() if p.is_dir()), reverse=True) if (DOCS / "arhivs").exists() else []
+    arhivs = ("<p class=\"note\">Fiksētas datu kopijas (nemainās, ērtas atsaucēm): "
+              + ", ".join(f'<a href="arhivs/{m}/dati_visi.csv">{m} (CSV)</a> · <a href="arhivs/{m}/">mape</a>' for m in mapes) + ".</p>") if mapes else ""
     figs = "\n".join(
         f'<figure><a href="grafiki/{c}.png"><img src="grafiki/{c}.png" alt="{html.escape(caption(c))}" loading="lazy"></a>'
         f'<figcaption><b>{i}.</b> {html.escape(caption(c))} · <a href="grafiki/{c}.png" download>lejupielādēt PNG</a></figcaption></figure>'
@@ -84,11 +89,13 @@ footer {{ margin-top: 40px; font-size: .85rem; color: var(--muted); border-top:1
   <a href="dati/dati_visi.csv">Visi dati (CSV)<span>viena rinda katrai valstij un gadam</span></a>
 </div>
 
+{arhivs}
 <h2>Grafiki</h2>
 {figs}
 
 <h2>Metodoloģija</h2>
 <p class="note">Galvenais avots ir Pasaules Bankas datubāze, kuras militāro izdevumu dati nāk no Stokholmas Starptautiskā miera pētniecības institūta (SIPRI). SIPRI definīcija ietver bruņoto spēku, aizsardzības ministrijas, miera uzturēšanas spēku un paramilitāro vienību izdevumus, kā arī militārās pensijas. Salīdzinājumam izmantoti Eurostat valdības izdevumi pēc funkcijām (COFOG GF02 „Aizsardzība”), kuru definīcija ir šaurāka, tāpēc skaitļi var atšķirties. Reālie izdevumi aprēķināti kā izdevumu daļa no IKP, reizināta ar IKP 2015. gada cenās. ES-27 svērtais vidējais ir visu dalībvalstu kopējie izdevumi, dalīti ar kopējo IKP. Ukraina, Krievija un Baltkrievija ir datos, bet nav iekļautas reitingos un vidējos rādītājos, jo kara ietekme izkropļotu salīdzinājumu. Arī Islande nav reitingos, jo tai nav bruņoto spēku.</p>
+<p class="note">Atsaucē norādi sākotnējo avotu: SIPRI Military Expenditure Database (dati iegūti caur Pasaules Bankas datubāzi) un lejupielādes datumu. Lapa atjaunojas reizi mēnesī, un SIPRI precizē iepriekšējos gadus, tāpēc skaitļi laika gaitā var nedaudz mainīties.</p>
 <p class="note">Korelācija starp izdevumiem un izaugsmi ir aprakstoša: tā neparāda, vai aizsardzības izdevumi ietekmē izaugsmi.</p>
 
 <footer>Avoti: <a href="https://data.worldbank.org/indicator/MS.MIL.XPND.GD.ZS">Pasaules Banka / SIPRI</a>, <a href="https://ec.europa.eu/eurostat/databrowser/view/gov_10a_exp/default/table">Eurostat gov_10a_exp</a>. Kods: <a href="https://github.com/Argent0rum/aizsardzibas-izdevumi">github.com/Argent0rum/aizsardzibas-izdevumi</a>.</footer>

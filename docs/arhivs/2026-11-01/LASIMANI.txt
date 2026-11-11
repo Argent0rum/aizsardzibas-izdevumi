@@ -1,0 +1,2 @@
+Fiksēta datu kopija. Dati lejupielādēti 2026-11-01 no Pasaules Bankas (SIPRI) un Eurostat.
+Šī mape netiek atjaunināta. Atsaucē norādi šo datumu.
